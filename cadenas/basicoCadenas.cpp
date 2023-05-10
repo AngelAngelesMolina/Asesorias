@@ -5,17 +5,19 @@ using namespace std;
 
 int main()
 {
-char palabra[] = "Angel"; 
+//CADENAS DE CARACTERES 
+char palabra[] = "Angel";
 char palabra2[] = {'A','n','g','e','l'};
 char nombre[20]; 
 
 cout<<"Introduzca su nombre:"<<endl;
+
 cin.getline(nombre,20,'\n'); 
-
-cout<<nombre<<endl;
+cout<<nombre<<endl; 
 cout<<strlen(palabra)<<endl;
-return 0;
+// strupr(nombre);
 
+return 0;
 // Realizar un programa donde ingreses la contrasenia con cadenas de caracteres y verifique las 
 // siguientes validaciones 
 // 1 - Debe de ser mayor a 7 caracteres

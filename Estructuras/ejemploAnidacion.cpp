@@ -32,7 +32,7 @@ for (int i = 0; i < 2; i++)
     cout<<"\n"; 
     //vaciar el buffer
     cin.clear();
-  cin.ignore(); 
+    cin.ignore(); 
 }
 
 for (int i = 0; i < 2; i++)

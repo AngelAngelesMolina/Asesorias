@@ -4,7 +4,8 @@ using namespace std;
 struct Persona { 
 char nombre[30]; 
 int edad; 
-}persona, *puntero_persona = &persona;
+}
+persona, *puntero_persona = &persona;
 
 void pedirDatos(){
     cout<<"Ingresa tu nombre: "<<endl; 
@@ -13,7 +14,9 @@ void pedirDatos(){
     cout<<"Ingresa tu edad: "<<endl; 
     cin>>puntero_persona->edad;
 }
+
 void mostrarDatos(Persona *puntero_persona){ 
+    // cout<<"El nombre de la persona es:"<<persona.nombre; 
     cout<<"El nombre es: "<<puntero_persona->nombre<<endl;
     cout<<"Su edad es: "<<puntero_persona->edad<<endl;
 }

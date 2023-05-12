@@ -9,8 +9,8 @@ int main()
     dir_num = numeros;
     for (int i = 0; i < 5; i++)
     {
-        cout<<"Elemento del vector ["<<i<<"]: "<<*dir_num<<endl;
-        // cout<<"Elemento del vector ["<<i<<"]: "<<*dir_num++<<endl;
+        // cout<<"Elemento del vector ["<<i<<"]: "<<*dir_num<<endl;
+        cout<<"Elemento del vector ["<<i<<"]: "<<*dir_num++<<endl;
     }
     return 0;
 }

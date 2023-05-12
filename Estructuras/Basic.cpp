@@ -3,9 +3,7 @@ using namespace std;
 struct Persona{
     char nombre[20]; 
     int edad;
-}
-persona1={"Angel",22},
-persona2={"Roman",27};
+} persona1={"Angel",22}, persona2={"Roman",27};
 // struct Persona{
 //     char nombre[20]; 
 //     int edad;

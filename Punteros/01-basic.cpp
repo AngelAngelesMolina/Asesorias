@@ -6,7 +6,7 @@ int main()
 {
 int num, *dir_num;
 num =20;
-//agregando la posicion de memoria de la variable
+//agregando la posicion de memoia de la variable
 dir_num=&num;
 
 cout<<"Numero:"<<*dir_num<<endl; 

@@ -7,7 +7,7 @@ struct Nodo{
     Nodo *siguiente; 
 };
 
-void agregarPila(Nodo *&pila, int n){ \
+void agregarPila(Nodo *&pila, int n){ // pila -> puntero y se pasa el valor por referencia.
 // 1. Crear espacio de memoria para nuevo nodo 
 Nodo *nuevo_nodo = new Nodo();
 // 2. Rellenar el dato
@@ -20,16 +20,36 @@ pila = nuevo_nodo;
 cout<<"Elemento "<<n<<" agregado correctamente"<<endl;
 }
 
+void sacarPila(Nodo *&pila, int &n){ 
+    // aux de tipo nodo 
+    Nodo *aux = pila;
+    n = aux->dato; 
+    pila = aux->siguiente; 
+    delete aux; 
+}
+
 int main()
 {
-    int n1,n2; 
-Nodo *pila = NULL; 
+    int dato; 
+Nodo *pila = NULL; //pila vacia 
 cout<<"Digite un numero: "<<endl;
-cin>>n1; 
-agregarPila(pila,n1);
+cin>>dato; 
+agregarPila(pila,dato);
 cout<<"Digite un segundo numero: "<<endl;
-cin>>n2; 
-agregarPila(pila,n2);
+cin>>dato; 
+agregarPila(pila,dato);
+
+cout<<"Sacando elementos de la pila: "; 
+    while(pila != NULL ){ // No sea el final de la pila
+    sacarPila(pila,dato);
+        if(pila != NULL){ 
+            cout<<dato<<" , ";
+        }
+        else{ 
+            cout<<dato<<"."<<endl;
+        }
+}
+
 return 0;
 }
 

@@ -15,10 +15,12 @@ bool cola_vacia(Nodo *frente){
 }
 
 void insertarCola(Nodo *&frente, Nodo *&fin, int n){ 
-    Nodo *nuevo_nodo = new Nodo; 
+    // Crear espacio en memoria 
+    Nodo *nuevo_nodo = new Nodo;
+    // Asignas nuevo nodo a dato que queremos insertar   
     nuevo_nodo ->dato = n; 
     nuevo_nodo ->siguiente = NULL; 
-
+    // Asignación de punteros frente y fin hacia el nuevo nodo 
     if(cola_vacia(frente)){ 
         frente = nuevo_nodo; 
     }
@@ -29,6 +31,21 @@ void insertarCola(Nodo *&frente, Nodo *&fin, int n){
     cout<<"Elemento "<<n<<" agregado correctamente. "<<endl;
 }
 
+void eliminarElemento(Nodo *&frente, Nodo *&fin, int &n){
+    // Obtener el valor del nodo 
+    n = frente -> dato;
+    // Crear un nodo aux y asignarle el frente de la cola
+    Nodo *aux = frente;
+    // Eliminar el nodo del frente de la cola 
+    if(frente == fin){ 
+        frente = NULL; 
+        fin = NULL; 
+    }else{ //hay mas de un nodo
+        frente = frente -> siguiente; 
+    }
+    delete aux; 
+}
+
 int main()
 {
     Nodo *frente = NULL; 
@@ -37,7 +54,17 @@ int main()
     cout<<"Digite un numero: "<<endl; 
     cin >> dato; 
     insertarCola(frente, fin, dato); 
-
-
+    cout<<"Digite un numero: "<<endl; 
+    cin >> dato; 
+    insertarCola(frente, fin, dato);
+    cout<<"Quitando nodos de la cola";
+    while(frente != NULL){ 
+        eliminarElemento(frente,fin,dato);
+        if(frente != NULL){ 
+            cout<<dato<<" , "<<endl; 
+        } else{ 
+            cout<<dato<<"."<<endl;
+        }
+    }
     return 0;
 }

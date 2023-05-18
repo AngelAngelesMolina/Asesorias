@@ -9,13 +9,15 @@ struct Nodo{
 
 void agregarPila(Nodo *&pila, int n){ // pila -> puntero y se pasa el valor por referencia.
 // 1. Crear espacio de memoria para nuevo nodo 
-Nodo *nuevo_nodo = new Nodo();
+Nodo *nuevo_nodo = new Nodo(); // uso de memoria dinamica
 // 2. Rellenar el dato
 nuevo_nodo-> dato = n; 
 //3. cargar el puntero pila dentro del nodo siguiente 
 nuevo_nodo->siguiente = pila;
 //4. Asignar el nuevo nodo a pila
 pila = nuevo_nodo; 
+// int arreglo[] = {1,2,3,4}; 
+int arreglo[6]; // arreglo estatico 
 
 cout<<"Elemento "<<n<<" agregado correctamente"<<endl;
 }
@@ -30,10 +32,10 @@ void sacarPila(Nodo *&pila, int &n){
 
 int main()
 {
-    int dato; 
+    int dato; //acum = 0
 Nodo *pila = NULL; //pila vacia 
 cout<<"Digite un numero: "<<endl;
-cin>>dato; 
+cin>>dato;
 agregarPila(pila,dato);
 cout<<"Digite un segundo numero: "<<endl;
 cin>>dato; 
@@ -49,7 +51,6 @@ cout<<"Sacando elementos de la pila: ";
             cout<<dato<<"."<<endl;
         }
 }
-
 return 0;
 }
 
